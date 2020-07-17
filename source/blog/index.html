@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1>BLOG</h1>
+{%- for post in collections.post reversed -%}
+  <article>
+    <h3><a href="{{ post.url }}">{{post.data.title}}</a></h3>
+    <div class="meta">
+      <span class="date">{{ post.data.date | toUTCString }}</span>
+    </div>
+  </article>
+{%- endfor -%}

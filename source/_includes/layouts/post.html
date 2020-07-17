@@ -1,0 +1,11 @@
+---
+layout: default
+permalink: "{{ page | toBlogUrl }}"
+---
+
+<link href="/css/blog.css" rel="stylesheet">
+<article class="post">
+  <h1>{{ title }}</h1>
+  <p>{{ date | toUTCString }}</p>
+  {{content}}
+</article>
