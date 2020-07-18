@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Build
-        uses: TartanLlama/actions-eleventy@v1.2
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
         with:
-          install_dependencies: true
+          node-version: 14
+      - run: npm install
+      - run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
